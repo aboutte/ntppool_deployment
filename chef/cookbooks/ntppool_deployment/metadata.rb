@@ -6,5 +6,5 @@ description      'Installs/Configures ntppool_deployment'
 long_description 'Installs/Configures ntppool_deployment'
 version          '0.1.0'
 
-depends 'chef_hostname'
-depends 'sudo'
+depends 'ntp', '~> 3.3.1'
+depends 'chef_hostname', '~> 0.4.2'

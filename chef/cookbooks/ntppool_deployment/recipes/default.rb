@@ -9,3 +9,5 @@
 
 # Update /etc/hosts
 hostname node['cloud']['hostname']
+
+include_recipe 'ntp'
