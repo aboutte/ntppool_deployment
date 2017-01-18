@@ -6,8 +6,8 @@ rpm -ivh https://packages.chef.io/files/stable/chefdk/1.1.16/el/6/chefdk-1.1.16-
 export HOME=/root/
 mkdir -p /etc/chef/
 cd /tmp/
-git clone https://github.com/andyboutte/ntppool_deployment.git
-mv cms-deployment/chef/* /etc/chef/
+git clone https://github.com/aboutte/ntppool_deployment.git
+mv ntppool_deployment/chef/* /etc/chef/
 
 cat <<EOF > /etc/chef/client.rb
 log_level       :info
@@ -15,7 +15,6 @@ log_location    "/var/log/chef-client.log"
 node_name       "$INSTANCE_ID"
 chef_repo_path  "/etc/chef/"
 cookbook_path   "/etc/chef/cookbooks/"
-data_bag_path   "/etc/chef/databags/"
 environment     "{{ref('Environment')}}"
 local_mode      true
 json_attribs    "/etc/chef/json_attributes.json"
@@ -34,7 +33,7 @@ cat <<EOF > /etc/chef/json_attributes.json
 EOF
 
 # Pull down all the dependency cookbooks
-cd /etc/chef/cookbooks/cms-rean
+cd /etc/chef/cookbooks/ntppool_deployment
 /usr/bin/berks vendor /etc/chef/cookbooks/
 
 # Run chef
