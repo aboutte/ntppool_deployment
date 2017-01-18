@@ -27,7 +27,7 @@ cat <<EOF > /etc/chef/json_attributes.json
     "ntppool_deployment"
   ],
   "cloud": {
-    "hostname": "{{ref('Hostname')}}",
+    "hostname": "{{ref('Hostname')}}"
   }
 }
 EOF

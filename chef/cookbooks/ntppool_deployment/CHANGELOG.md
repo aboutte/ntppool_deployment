@@ -1,3 +1,3 @@
 # 0.1.0
 
-Initial release of cms-rean
+Initial release of ntppool_deployment
