@@ -60,8 +60,8 @@ cd applications/cms/
 ##### Usage:
 
 ```
-$ ./cms.rb
-usage: ./cms.rb <expand|diff|validate|create|update|cancel-update|delete|describe|describe-resource|get-template>
+$ ./ntppool_deployment.rb
+usage: ./ntppool_deployment.rb <expand|diff|validate|create|update|cancel-update|delete|describe|describe-resource|get-template>
 ```
 
 ##### Launching CloudFormation stack:

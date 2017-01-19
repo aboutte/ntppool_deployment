@@ -1,5 +1,6 @@
 
-# Take in the contents of all users data scripts, compile them into one string, and add useful comments along the way
+# Take in the contents of all users data scripts, compile them into one string,
+# and add useful comments along the way
 def assemble_userdata
   userdata_dir = "#{File.dirname(File.expand_path($PROGRAM_NAME))}/userdata"
   script = "#!/bin/bash\n\n"
