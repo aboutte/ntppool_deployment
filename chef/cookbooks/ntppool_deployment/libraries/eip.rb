@@ -10,7 +10,7 @@ def attach_eip
     require chef_gem
   end
 
-  az = node['placement_availability_zone']
+  az = node['ec2']['placement_availability_zone']
   region = az[0..-2]
   instance_id = node['ec2']['instance_id']
 
@@ -19,7 +19,7 @@ def attach_eip
 
   eip = node['ntppool_deployment']['eip'] ? node['ntppool_deployment']['eip'] : acquire_eip(aws_clients)
 
-  resp = ec2.associate_address({
+  resp = aws_clients[:ec2].associate_address({
     allocation_id: eip[:allocation_id],
     instance_id: instance_id,
   })

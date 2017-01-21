@@ -42,7 +42,6 @@ template do
   resource 'ntpdlc', Type: 'AWS::AutoScaling::LaunchConfiguration', Properties: {
     ImageId: amazon_linux_ami_id,
     IamInstanceProfile: ref('IAMInstanceProfile'),
-    AssociatePublicIpAddress: true,
     SecurityGroups: [ref('ntpdsg')],
     InstanceType: ref('InstanceType'),
     KeyName: ref('KeyName'),
