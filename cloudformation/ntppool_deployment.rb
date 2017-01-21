@@ -20,9 +20,28 @@ template do
     DesiredCapacity: '1'
   }
 
+  resource 'IAMRole', Type: 'AWS::IAM::Role', Properties: {
+    AssumeRolePolicyDocument: {
+      Version: '2012-10-17',
+      Statement: [
+        {
+          Effect: 'Allow',
+          Principal: { Service: ['ec2.amazonaws.com'] },
+          Action: ['sts:AssumeRole']
+        }
+      ]
+    },
+    Path: '/'
+  }
+
+  resource 'IAMInstanceProfile', Type: 'AWS::IAM::InstanceProfile', Properties: {
+    Path: '/',
+    Roles: [ref('IAMRole')]
+  }
+
   resource 'ntpdlc', Type: 'AWS::AutoScaling::LaunchConfiguration', Properties: {
     ImageId: amazon_linux_ami_id,
-    # :IamInstanceProfile => ref('IAMInstanceProfile'),
+    IamInstanceProfile: ref('IAMInstanceProfile'),
     AssociatePublicIpAddress: true,
     SecurityGroups: [ref('ntpdsg')],
     InstanceType: ref('InstanceType'),
