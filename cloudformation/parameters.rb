@@ -11,6 +11,11 @@ parameter 'Hostname',
           Type: 'String',
           Default: 'ntp-us-west-2.andyboutte.com'
 
+parameter 'eip',
+          Description: 'EIP to associate with EC2 instance.  Optional, if EIP is not provided one will be aquired.',
+          Type: 'String',
+          Default: '35.164.111.128'
+
 parameter 'VpcId',
           Description: 'What VPC to deploy NTP server into',
           Type: 'String',
