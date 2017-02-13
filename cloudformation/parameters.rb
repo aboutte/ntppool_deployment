@@ -14,7 +14,11 @@ parameter 'Hostname',
 parameter 'eip',
           Description: 'EIP to associate with EC2 instance.  Optional, if EIP is not provided one will be aquired.',
           Type: 'String',
-          Default: '35.164.111.128'
+          Default: '35.164.111.128',
+          MinLength: '7',
+          MaxLength: '15',
+          AllowedPattern: '(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})',
+          ConstraintDescription: 'Must be a valid CIDR range of the form x.x.x.x'
 
 parameter 'VpcId',
           Description: 'What VPC to deploy NTP server into',
@@ -22,11 +26,6 @@ parameter 'VpcId',
           Default: 'vpc-41da6226'
 
 parameter 'PublicSubnets',
-          Description: 'What subnet to deploy NTP server into',
-          Type: 'CommaDelimitedList',
-          Default: 'subnet-30fd0c79,subnet-5e1bc439,subnet-d06b3388'
-
-parameter 'eip',
           Description: 'What subnet to deploy NTP server into',
           Type: 'CommaDelimitedList',
           Default: 'subnet-30fd0c79,subnet-5e1bc439,subnet-d06b3388'
@@ -43,5 +42,5 @@ parameter 'KeyName',
 parameter 'InstanceType',
           Description: 'NTP Server EC2 instance type',
           Type: 'String',
-          Default: 't2.micro',
+          Default: 't2.nano',
           ConstraintDescription: 'must be a valid EC2 instance type.'
