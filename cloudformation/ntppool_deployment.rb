@@ -12,14 +12,6 @@ template do
   tag :environment, Value: parameters['Environment']
   tag :launched_by, Value: ENV['USER']
 
-  resource 'ntpdasg', Type: 'AWS::AutoScaling::AutoScalingGroup', Properties: {
-    VPCZoneIdentifier: ref('PublicSubnets'),
-    LaunchConfigurationName: ref('ntpdlc'),
-    MinSize: '1',
-    MaxSize: '1',
-    DesiredCapacity: '1'
-  }
-
   resource 'IAMRole', Type: 'AWS::IAM::Role', Properties: {
     AssumeRolePolicyDocument: {
       Version: '2012-10-17',
@@ -39,8 +31,17 @@ template do
     Roles: [ref('IAMRole')]
   }
 
+  resource 'ntpdasg', Type: 'AWS::AutoScaling::AutoScalingGroup', Properties: {
+    VPCZoneIdentifier: ref('PublicSubnets'),
+    LaunchConfigurationName: ref('ntpdlc'),
+    MinSize: '1',
+    MaxSize: '1',
+    DesiredCapacity: '1'
+  }
+
   resource 'ntpdlc', Type: 'AWS::AutoScaling::LaunchConfiguration', Properties: {
     ImageId: amazon_linux_ami_id,
+    AssociatePublicIpAddress: true,
     IamInstanceProfile: ref('IAMInstanceProfile'),
     SecurityGroups: [ref('ntpdsg')],
     InstanceType: ref('InstanceType'),
