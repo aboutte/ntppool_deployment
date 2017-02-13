@@ -1,7 +1,9 @@
 
-default['ntp']['servers'] = ['ntp1.linuxmedialabs.com',
+default['ntp']['servers'] = ['tick.eoni.com',
                              'dmz2.la-archdiocese.net',
-                             'tick.ispeakl33t.com',
-                             'dmzs.com']
+                             'reloj.kjsl.com',
+                             'ntp1.pts0.net',
+                             'tick.eoni.com',
+                             'cambria.bitsrc.net']
 
 default['ntppool_deployment']['chef_gems'] = ['aws-sdk-core', 'awesome_print']
