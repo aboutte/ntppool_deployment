@@ -8,6 +8,7 @@ template do
   value Description: 'AWS CloudFormation to deploy a NTP Pool Server'
   load_from_file('./parameters.rb')
 
+  tag :name, Value: 'ntpd'
   tag :application, Value: 'ntpd'
   tag :environment, Value: parameters['Environment']
   tag :launched_by, Value: ENV['USER']

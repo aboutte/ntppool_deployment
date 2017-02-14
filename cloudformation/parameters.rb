@@ -9,7 +9,7 @@ parameter 'Environment',
 parameter 'Hostname',
           Description: 'What Hostname should be used?',
           Type: 'String',
-          Default: 'ntp-us-west-2.andyboutte.com'
+          Default: 'ntp-usw2.andyboutte.com'
 
 parameter 'eip',
           Description: 'EIP to associate with EC2 instance.  Optional, if EIP is not provided one will be aquired.',

@@ -6,4 +6,6 @@ default['ntp']['servers'] = ['tick.eoni.com',
                              'tick.eoni.com',
                              'cambria.bitsrc.net']
 
-default['ntppool_deployment']['chef_gems'] = ['aws-sdk-core', 'awesome_print']
+default['ntppool_deployment']['chef_gems'] = %w(aws-sdk-core awesome_print)
+
+default['ntppool_deployment']['rpms'] = %w(tcpdump wireshark)

@@ -7,8 +7,15 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# Update /etc/hosts
 hostname node['cloud']['hostname']
+
+node['ntppool_deployment']['rpms'].each do |rpm|
+  package rpm do
+    retries 2
+    retry_delay 10
+    action :install
+  end
+end
 
 file '/var/lib/ntp/sntp-kod' do
   mode '0755'
