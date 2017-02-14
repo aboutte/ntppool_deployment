@@ -14,10 +14,7 @@ parameter 'Hostname',
 parameter 'eip',
           Description: 'EIP to associate with EC2 instance.  Optional, if EIP is not provided one will be aquired.',
           Type: 'String',
-          Default: '35.164.111.128',
-          MinLength: '7',
-          MaxLength: '15',
-          AllowedPattern: '(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})',
+          Default: '52.37.145.131',
           ConstraintDescription: 'Must be a valid CIDR range of the form x.x.x.x'
 
 parameter 'VpcId',
