@@ -7,6 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
+# TODO: add in support for aliases
+# tshark -te -ni any -R 'ntp'
+# ntpq -p
+
 hostname node['cloud']['hostname']
 
 node['ntppool_deployment']['rpms'].each do |rpm|
