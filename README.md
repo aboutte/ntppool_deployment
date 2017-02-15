@@ -1,42 +1,4 @@
 
-- add name tag to ec2 instance
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ntppool_deployment
 
 ## Summary

@@ -29,5 +29,5 @@ parameter 'KeyName',
 parameter 'InstanceType',
           Description: 'NTP Server EC2 instance type',
           Type: 'String',
-          Default: 't2.nano',
+          Default: 't2.micro',
           ConstraintDescription: 'must be a valid EC2 instance type.'

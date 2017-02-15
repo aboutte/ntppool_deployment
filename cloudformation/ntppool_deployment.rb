@@ -54,17 +54,17 @@ template do
     GatewayId: ref('InternetGateway')
   }
 
-  resource 'PublicSubnetRouteTableAssociation', Type: 'AWS::EC2::SubnetRouteTableAssociation', Properties: {
+  resource 'PublicSubnetaRouteTableAssociation', Type: 'AWS::EC2::SubnetRouteTableAssociation', Properties: {
     SubnetId: ref('PublicSubneta'),
     RouteTableId: ref('PublicRouteTable')
   }
 
-  resource 'PublicSubnetRouteTableAssociation', Type: 'AWS::EC2::SubnetRouteTableAssociation', Properties: {
+  resource 'PublicSubnetbRouteTableAssociation', Type: 'AWS::EC2::SubnetRouteTableAssociation', Properties: {
     SubnetId: ref('PublicSubnetb'),
     RouteTableId: ref('PublicRouteTable')
   }
 
-  resource 'PublicSubnetRouteTableAssociation', Type: 'AWS::EC2::SubnetRouteTableAssociation', Properties: {
+  resource 'PublicSubnetcRouteTableAssociation', Type: 'AWS::EC2::SubnetRouteTableAssociation', Properties: {
     SubnetId: ref('PublicSubnetc'),
     RouteTableId: ref('PublicRouteTable')
   }
@@ -95,7 +95,7 @@ template do
 
   resource 'Outbound80PublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
     NetworkAclId: ref('PublicNetworkAcl'),
-    RuleNumber: '100',
+    RuleNumber: '200',
     Protocol: '6',
     RuleAction: 'allow',
     Egress: 'true',
@@ -105,7 +105,7 @@ template do
 
   resource 'Outbound443PublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
     NetworkAclId: ref('PublicNetworkAcl'),
-    RuleNumber: '100',
+    RuleNumber: '201',
     Protocol: '6',
     RuleAction: 'allow',
     Egress: 'true',
@@ -113,9 +113,9 @@ template do
     PortRange: { From: '443', To: '443' }
   }
 
-  resource 'Outbound443PublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
+  resource 'Outbound123PublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
     NetworkAclId: ref('PublicNetworkAcl'),
-    RuleNumber: '100',
+    RuleNumber: '202',
     Protocol: '17',
     RuleAction: 'allow',
     Egress: 'true',
@@ -123,17 +123,27 @@ template do
     PortRange: { From: '123', To: '123' }
   }
 
-  resource 'PublicSubnetNetworkAclAssociation', Type: 'AWS::EC2::SubnetNetworkAclAssociation', Properties: {
+  resource 'OutboundDynamicPortPublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
+    NetworkAclId: ref('PublicNetworkAcl'),
+    RuleNumber: '203',
+    Protocol: '6',
+    RuleAction: 'allow',
+    Egress: 'false',
+    CidrBlock: '0.0.0.0/0',
+    PortRange: { From: '1024', To: '65535' }
+  }
+
+  resource 'PublicSubnetaNetworkAclAssociation', Type: 'AWS::EC2::SubnetNetworkAclAssociation', Properties: {
     SubnetId: ref('PublicSubneta'),
     NetworkAclId: ref('PublicNetworkAcl')
   }
 
-  resource 'PublicSubnetNetworkAclAssociation', Type: 'AWS::EC2::SubnetNetworkAclAssociation', Properties: {
+  resource 'PublicSubnetbNetworkAclAssociation', Type: 'AWS::EC2::SubnetNetworkAclAssociation', Properties: {
     SubnetId: ref('PublicSubnetb'),
     NetworkAclId: ref('PublicNetworkAcl')
   }
 
-  resource 'PublicSubnetNetworkAclAssociation', Type: 'AWS::EC2::SubnetNetworkAclAssociation', Properties: {
+  resource 'PublicSubnetcNetworkAclAssociation', Type: 'AWS::EC2::SubnetNetworkAclAssociation', Properties: {
     SubnetId: ref('PublicSubnetc'),
     NetworkAclId: ref('PublicNetworkAcl')
   }
@@ -194,7 +204,7 @@ template do
 
   resource 'WaitCondition', Type: 'AWS::CloudFormation::WaitCondition', DependsOn: 'ntpdasg', Properties: {
     Handle: ref('WaitHandle'),
-    Timeout: '300',
+    Timeout: '600',
     Count: 1
   }
 end.exec!

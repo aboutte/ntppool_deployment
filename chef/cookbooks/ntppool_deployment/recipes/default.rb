@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'aliases'
+include_recipe 'ntppool_deployment::aliases'
 
 hostname node['cloud']['hostname']
 
