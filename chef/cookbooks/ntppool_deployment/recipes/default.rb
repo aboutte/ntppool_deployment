@@ -7,9 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# TODO: add in support for aliases
-# tshark -te -ni any -R 'ntp'
-# ntpq -p
+include_recipe 'aliases'
 
 hostname node['cloud']['hostname']
 

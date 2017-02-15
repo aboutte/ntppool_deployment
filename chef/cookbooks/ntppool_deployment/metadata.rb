@@ -1,6 +1,6 @@
 name             'ntppool_deployment'
 maintainer       'Andy Boutte'
-maintainer_email 'andyboutte@mac.com'
+maintainer_email 'andyboutte@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures ntppool_deployment'
 long_description 'Installs/Configures ntppool_deployment'
@@ -8,3 +8,4 @@ version          '0.1.0'
 
 depends 'ntp', '~> 3.3.1'
 depends 'chef_hostname', '~> 0.4.2'
+depends 'magic_shell', '~> 1.0.0'

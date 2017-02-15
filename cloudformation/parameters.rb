@@ -17,16 +17,6 @@ parameter 'eip',
           Default: '52.37.145.131',
           ConstraintDescription: 'Must be a valid CIDR range of the form x.x.x.x'
 
-parameter 'VpcId',
-          Description: 'What VPC to deploy NTP server into',
-          Type: 'String',
-          Default: 'vpc-41da6226'
-
-parameter 'PublicSubnets',
-          Description: 'What subnet to deploy NTP server into',
-          Type: 'CommaDelimitedList',
-          Default: 'subnet-30fd0c79,subnet-5e1bc439,subnet-d06b3388'
-
 parameter 'KeyName',
           Description: 'Name of an existing EC2 KeyPair to enable SSH access to the instances',
           Type: 'String',
