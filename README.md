@@ -29,7 +29,7 @@ export AWS_SECRET_ACCESS_KEY="xxxxxxxx"
 
 ```
 # Clone repo from GitHub
-git clone https://github.com/andyboutte/ntppool_deployment.git
+git clone git@github.com:aboutte/ntppool_deployment.git
 cd ntppool_deployment
 bundle install
 
@@ -45,5 +45,5 @@ usage: ./ntppool_deployment.rb <expand|diff|validate|create|update|cancel-update
 ### Launching CloudFormation stack:
 
 ```
-bundle exec ./ntppool_deployment.rb create --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "Environment=production;Hostname=ntp-us-west-2.andyboutte.com" --disable-rollback
+bundle exec ./ntppool_deployment.rb create --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "Environment=production;Hostname=ntp-usw2.andyboutte.com" --disable-rollback
 ```
