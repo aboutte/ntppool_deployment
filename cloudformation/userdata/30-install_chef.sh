@@ -15,7 +15,7 @@ log_location    "/var/log/chef-client.log"
 node_name       "$INSTANCE_ID"
 chef_repo_path  "/etc/chef/"
 cookbook_path   "/etc/chef/cookbooks/"
-environment     "{{ref('Environment')}}"
+environment     "{{ref('environment')}}"
 local_mode      true
 json_attribs    "/etc/chef/json_attributes.json"
 EOF
@@ -27,7 +27,7 @@ cat <<EOF > /etc/chef/json_attributes.json
     "ntppool_deployment"
   ],
   "cloud": {
-    "hostname": "{{ref('Hostname')}}",
+    "hostname": "{{ref('hostname')}}",
     "eip": "{{ref('eip')}}"
   }
 }

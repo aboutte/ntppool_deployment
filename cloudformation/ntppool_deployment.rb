@@ -10,7 +10,7 @@ template do
 
   tag :Name, Value: 'ntpd'
   tag :application, Value: 'ntpd'
-  tag :environment, Value: parameters['Environment']
+  tag :environment, Value: parameters['environment']
   tag :launched_by, Value: ENV['USER']
 
   resource 'VPC', Type: 'AWS::EC2::VPC', Properties: {
@@ -190,8 +190,8 @@ template do
     AssociatePublicIpAddress: true,
     IamInstanceProfile: ref('IAMInstanceProfile'),
     SecurityGroups: [ref('ntpdsg')],
-    InstanceType: ref('InstanceType'),
-    KeyName: ref('KeyName'),
+    InstanceType: ref('instance_type'),
+    KeyName: ref('key_name'),
     UserData: base64(interpolate(assemble_userdata))
   }
 
