@@ -1,4 +1,5 @@
-https://api.travis-ci.org/aboutte/ntppool_deployment.svg?branch=master
+[![Build Status](https://api.travis-ci.org/aboutte/ntppool_deployment.svg?branch=master)](https://travis-ci.org/aboutte/ntppool_deployment)
+
 
 # ntppool_deployment
 
