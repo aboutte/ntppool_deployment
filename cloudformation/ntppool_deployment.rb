@@ -190,8 +190,8 @@ template do
     AssociatePublicIpAddress: true,
     IamInstanceProfile: ref('IAMInstanceProfile'),
     SecurityGroups: [ref('ntpdsg')],
-    InstanceType: ref('instance_type'),
-    KeyName: ref('key_name'),
+    InstanceType: ref('instanceType'),
+    KeyName: ref('keyName'),
     UserData: base64(interpolate(assemble_userdata))
   }
 

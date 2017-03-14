@@ -17,7 +17,7 @@ parameter 'eip',
           Default: '52.37.145.131',
           ConstraintDescription: 'Must be a valid CIDR range of the form x.x.x.x'
 
-parameter 'key_name',
+parameter 'keyName',
           Description: 'Name of an existing EC2 KeyPair to enable SSH access to the instances',
           Type: 'String',
           MinLength: '1',
@@ -26,7 +26,7 @@ parameter 'key_name',
           Default: 'aboutte',
           ConstraintDescription: 'Can contain only alphanumeric characters, spaces, dashes and underscores.'
 
-parameter 'instance_type',
+parameter 'instanceType',
           Description: 'NTP Server EC2 instance type',
           Type: 'String',
           Default: 't2.micro',

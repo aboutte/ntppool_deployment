@@ -1,5 +1,5 @@
 
-AWS_CLIENTS = {}.freeze
+AWS_CLIENTS = {}
 
 AWS_CLIENTS[:ec2] = Aws::EC2::Client.new(
   region: aws_region
