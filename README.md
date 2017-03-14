@@ -45,5 +45,5 @@ usage: ./ntppool_deployment.rb <expand|diff|validate|create|update|cancel-update
 ### Launching CloudFormation stack:
 
 ```
-bundle exec ./ntppool_deployment.rb create --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "Environment=production;Hostname=ntp-usw2.andyboutte.com" --disable-rollback
+bundle exec ./ntppool_deployment.rb create --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "Environment=production;Hostname=ntp-usw2.andyboutte.com;eip=52.37.145.131;KeyName=aboutte;InstanceType=t2.micro" --disable-rollback
 ```
