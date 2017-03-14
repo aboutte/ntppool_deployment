@@ -1,4 +1,3 @@
-
 # ntppool_deployment
 
 ## Summary

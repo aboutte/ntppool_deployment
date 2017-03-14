@@ -123,12 +123,22 @@ template do
     PortRange: { From: '123', To: '123' }
   }
 
-  resource 'OutboundDynamicPortPublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
+  resource 'OutboundTCPDynamicPortPublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
     NetworkAclId: ref('PublicNetworkAcl'),
     RuleNumber: '203',
     Protocol: '6',
     RuleAction: 'allow',
-    Egress: 'false',
+    Egress: 'true',
+    CidrBlock: '0.0.0.0/0',
+    PortRange: { From: '1024', To: '65535' }
+  }
+
+  resource 'OutboundUDPDynamicPortPublicNetworkAclEntry', Type: 'AWS::EC2::NetworkAclEntry', Properties: {
+    NetworkAclId: ref('PublicNetworkAcl'),
+    RuleNumber: '204',
+    Protocol: '17',
+    RuleAction: 'allow',
+    Egress: 'true',
     CidrBlock: '0.0.0.0/0',
     PortRange: { From: '1024', To: '65535' }
   }
