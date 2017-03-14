@@ -39,17 +39,17 @@ bundle install
 
 ```
 $ ./ntppool_deployment.rb
-usage: ./ntppool_deployment.rb <expand|diff|validate|create|update|cancel-update|delete|describe|describe-resource|get-template>
+usage: cloudformation/ntppool_deployment.rb <expand|diff|validate|create|update|cancel-update|delete|describe|describe-resource|get-template>
 ```
 
 ### Launching CloudFormation stack:
 
 ```
-bundle exec ./ntppool_deployment.rb create --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "environment=production;hostname=ntp-usw2.andyboutte.com;eip=52.37.145.131;keyName=aboutte;instanceType=t2.micro" --disable-rollback
+bundle exec cloudformation/ntppool_deployment.rb create --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "environment=production;hostname=ntp-usw2.andyboutte.com;eip=52.37.145.131;keyName=aboutte;instanceType=t2.micro" --disable-rollback
 ```
 
 ### Validate CloudFormation Syntax:
 
 ```
-bundle exec ./ntppool_deployment.rb validate --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "environment=production;hostname=ntp-usw2.andyboutte.com;eip=52.37.145.131;keyName=aboutte;instanceType=t2.micro" --disable-rollback
+bundle exec cloudformation/ntppool_deployment.rb validate --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "environment=production;hostname=ntp-usw2.andyboutte.com;eip=52.37.145.131;keyName=aboutte;instanceType=t2.micro" --disable-rollback
 ```

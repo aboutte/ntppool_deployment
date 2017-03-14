@@ -11,6 +11,4 @@ namespace :cloudformation do
   end
 end
 
-
-
 task default: %i(rubocop cloudformation:syntax)

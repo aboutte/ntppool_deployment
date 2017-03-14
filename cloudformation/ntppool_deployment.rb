@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
-require './lib/preload.rb'
+require File.expand_path(File.join(File.dirname(__FILE__), './lib/preload.rb'))
 
 template do
-  load_from_file('./lib/autoloader.rb')
+  load_from_file(File.expand_path(File.join(File.dirname(__FILE__), './lib/autoloader.rb')))
   value AWSTemplateFormatVersion: '2010-09-09'
   value Description: 'AWS CloudFormation to deploy a NTP Pool Server'
-  load_from_file('./parameters.rb')
+  load_from_file(File.expand_path(File.join(File.dirname(__FILE__), './parameters.rb')))
 
   tag :Name, Value: 'ntpd'
   tag :application, Value: 'ntpd'
