@@ -10,4 +10,3 @@ notifications:
 branches:
   only:
     - master
-before_script: rubocop -SD
