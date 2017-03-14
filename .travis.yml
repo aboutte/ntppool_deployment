@@ -4,10 +4,11 @@ rvm:
   - 2.1.8
 before_install:
   - gem update bundler
+  - gem install fog -v 0.47.1 --no-rdoc --no-ri
 notifications:
   email:
     - andyboutte@gmail.com
 branches:
   only:
     - master
-before_script: rubocop -SDa
+before_script: rubocop -SD
