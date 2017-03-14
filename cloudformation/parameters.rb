@@ -12,7 +12,7 @@ parameter 'Hostname',
           Default: 'ntp-usw2.andyboutte.com'
 
 parameter 'eip',
-          Description: 'EIP to associate with EC2 instance.  Optional, if EIP is not provided one will be aquired.',
+          Description: 'EIP to associate with EC2 instance.  Optional, if EIP is not provided one will be acquired.',
           Type: 'String',
           Default: '52.37.145.131',
           ConstraintDescription: 'Must be a valid CIDR range of the form x.x.x.x'
