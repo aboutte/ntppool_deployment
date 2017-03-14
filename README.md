@@ -53,3 +53,33 @@ bundle exec cloudformation/ntppool_deployment.rb create --region us-west-2 --sta
 ```
 bundle exec cloudformation/ntppool_deployment.rb validate --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "environment=production;hostname=ntp-usw2.andyboutte.com;eip=52.37.145.131;keyName=aboutte;instanceType=t2.micro" --disable-rollback
 ```
+
+## Travis CI
+
+Some of the Rake tasks require AWS credentials.  I have created a `travisci` user in my NTP AWS account and provided the following inline IAM Policy:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1489533261000",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:ValidateTemplate"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
+```
+Following the Travis CI [documentation](https://docs.travis-ci.com/user/encryption-keys/) I encrypted my AWS Key and Secret:
+```
+gem install travis
+travis encrypt AWS_ACCESS_KEY_ID="AK...EA" --add
+travis encrypt AWS_SECRET_ACCESS_KEY="P1V...QDV" --add
+```
+
+which automatically updated my .travis.yml file with the secrets.
