@@ -1,3 +1,5 @@
+https://api.travis-ci.org/aboutte/ntppool_deployment.svg?branch=master
+
 # ntppool_deployment
 
 ## Summary
