@@ -71,6 +71,16 @@ Some of the Rake tasks require AWS credentials.  I have created a `travisci` use
             "Resource": [
                 "*"
             ]
+        },
+        {
+            "Sid": "Stmt1489533843000",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*"
+            ],
+            "Resource": [
+                "*"
+            ]
         }
     ]
 }
