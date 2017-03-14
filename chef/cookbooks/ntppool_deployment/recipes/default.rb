@@ -28,5 +28,5 @@ end
 include_recipe 'ntp'
 
 # This function will use the EIP passed into chef at node['ntppool_deployment']['eip']
-# else it will aquire an EIP
+# else it will acquire an EIP
 attach_eip
