@@ -76,7 +76,7 @@ Some of the Rake tasks require AWS credentials.  I have created a `travisci` use
             "Sid": "Stmt1489533843000",
             "Effect": "Allow",
             "Action": [
-                "ec2:Describe*"
+                "ec2:DescribeImages"
             ],
             "Resource": [
                 "*"
@@ -93,3 +93,10 @@ travis encrypt AWS_SECRET_ACCESS_KEY="P1V...QDV" --add
 ```
 
 which automatically updated my .travis.yml file with the secrets.
+
+## TODO: 
+
+- [x] get Travis CI hooked up
+- [ ] remove all the unnecessary rubocop overrides
+- [ ] find API to automate the generation of [NTP Server](https://github.com/aboutte/ntppool_deployment/blob/master/chef/cookbooks/ntppool_deployment/attributes/default.rb#L2)
+- [ ] write test to validate chef code
