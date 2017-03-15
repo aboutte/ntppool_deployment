@@ -15,13 +15,13 @@ The Cloudformation template will create the following resources:
 - VPC
 - 3 subnets, 1 per AZ
 - ACL
--- inbound
---- UDP 123
--- outbound
---- TCP 80
---- TCP 443
---- UDP 123
---- TCP ephemeral ports (1024-65535)
+    - inbound
+       - UDP 123
+    - outbound
+        - TCP 80
+        - TCP 443
+        - UDP 123
+        - TCP ephemeral ports (1024-65535)
 - Launch Configuration
 - Auto Scaling Group
 - EIP (only if EIP has not be passed into CloudFormation via the eip parameter)
