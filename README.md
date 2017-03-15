@@ -7,7 +7,26 @@
 
 This repository can be used to quickly stand up NTP Pool servers.  I recently wanted to contribute back to the NTP Pool
 but do not have have physical resources to donate back with.  Using Cloudformation we can provision all of the needed 
-infrastructure and then using Chef we can configure an EC2 instance to the NTP Pool specifications.  
+infrastructure and then using Chef we can configure an EC2 instance to the NTP Pool specifications.
+ 
+## Details
+
+The Cloudformation template will create the following resources:
+- VPC
+- 3 subnets, 1 per AZ
+- ACL
+-- inbound
+--- UDP 123
+-- outbound
+--- TCP 80
+--- TCP 443
+--- UDP 123
+--- TCP ephemeral ports (1024-65535)
+- Launch Configuration
+- Auto Scaling Group
+- EIP (only if EIP has not be passed into CloudFormation via the eip parameter)
+
+![AWS Architecture](/assets/aws_architecture.png)
 
 
 ## Usage
