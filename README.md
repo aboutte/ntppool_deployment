@@ -116,6 +116,7 @@ which automatically updated my .travis.yml file with the secrets.
 ## TODO: 
 
 - [x] get Travis CI hooked up
+- [ ] add cloudwatch alarms into deployment 
 - [ ] remove all the unnecessary rubocop overrides
 - [ ] find API to automate the generation of [NTP Server](https://github.com/aboutte/ntppool_deployment/blob/master/chef/cookbooks/ntppool_deployment/attributes/default.rb#L2)
 - [ ] write test to validate chef code
