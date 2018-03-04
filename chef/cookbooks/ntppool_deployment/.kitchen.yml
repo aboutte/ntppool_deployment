@@ -1,0 +1,44 @@
+---
+driver:
+  name: ec2
+#  spot_price: 0.1
+  region: <%= ENV['AWS_REGION'] %>
+  subnet_id: <%= ENV['SUBNET_ID'] %>
+  security_group_ids: ["<%= ENV['SG_ID'] %>"]
+  aws_ssh_key_id: <%= ENV['SSH_KEY'] %>
+  iam_profile_name: <%= ENV['IAM_PROFILE'] %>
+  associate_public_ip: <%= ENV['PUBLIC_IP'] %>
+  tags:
+    Name: "ntppool"
+    Owner: "Andy Boutte"
+
+provisioner:
+  product_name: chefdk
+  product_version: 1.1.16
+
+transport:
+  name: rsync
+  ssh_key: <%= ENV['SSH_KEY_PATH'] %>
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: amazonlinux
+    driver:
+      instance_type: m3.medium
+      image_id: <%= ENV['amazonlinux_AMI'] %>
+    transport:
+      username: ec2-user
+
+suites:
+  - name: ntppool_deployment
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    run_list:
+      - recipe[ntppool_deployment]
+    attributes:
+      cloud:
+        hostname: ntp.andyboutte.com
+        disable_eip_acquisition: true

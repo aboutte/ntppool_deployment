@@ -7,5 +7,3 @@ default['ntp']['servers'] = ['tick.eoni.com',
                              'cambria.bitsrc.net']
 
 default['ntppool_deployment']['chef_gems'] = %w[aws-sdk-core awesome_print]
-
-default['ntppool_deployment']['rpms'] = %w[htop strace sysstat iptraf tcpdump wireshark]

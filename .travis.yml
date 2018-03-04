@@ -1,7 +1,7 @@
 language: ruby
 sudo: false
 rvm:
-- 2.4.2
+- 2.3.3
 
 before_install:
 - gem update bundler
@@ -11,6 +11,21 @@ notifications:
     on_success: never
     on_failure:
     - andyboutte@gmail.com
+
+#jobs:
+#  include:
+#    - stage: test
+#      script: ./test 1
+#    - stage: test
+#      script: ./test 2
+#    - stage: deploy
+#      script: ./deploy
+#
+#stages:
+#  - compile
+#  - test
+#  - name: deploy
+#    if: branch = master
 
 env:
   global:
