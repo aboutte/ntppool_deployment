@@ -3,7 +3,7 @@ parameter 'environment',
           Description: 'What environment to deploy the application into',
           Type: 'String',
           Default: 'production',
-          AllowedValues: %w(production),
+          AllowedValues: %w[production],
           ConstraintDescription: 'Must be a valid environment.'
 
 parameter 'hostname',
