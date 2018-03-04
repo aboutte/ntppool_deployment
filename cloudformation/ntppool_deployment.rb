@@ -199,8 +199,7 @@ template do
     GroupDescription: 'EC2 security group',
     VpcId: ref('VPC'),
     SecurityGroupIngress: [
-      { IpProtocol: 'udp', FromPort: '123', ToPort: '123', CidrIp: '0.0.0.0/0' },
-      { IpProtocol: 'tcp', FromPort: '22', ToPort: '22', CidrIp: "#{public_ip}/32" }
+      { IpProtocol: 'udp', FromPort: '123', ToPort: '123', CidrIp: '0.0.0.0/0' }
     ],
     SecurityGroupEgress: [
       { IpProtocol: 'udp', FromPort: '123', ToPort: '123', CidrIp: '0.0.0.0/0' },
