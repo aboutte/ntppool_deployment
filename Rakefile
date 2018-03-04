@@ -11,14 +11,14 @@ namespace :cloudformation do
   end
 
   task :rubocop do
-    sh "rubocop -SD cloudformation"
+    sh 'rubocop -SD cloudformation'
   end
 end
 
 namespace :chef do
   desc 'Check chef syntax'
   task :rubocop do
-    sh "rubocop -SD chef"
+    sh 'rubocop -SD chef'
   end
 end
 
