@@ -1,6 +1,5 @@
-# # encoding: utf-8
 
-%w(ntp).each do |rpm|
+%w[ntp].each do |rpm|
   describe package(rpm) do
     it { should be_installed }
   end
