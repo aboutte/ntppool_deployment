@@ -1,14 +1,17 @@
 language: ruby
 sudo: false
 rvm:
-- 2.1.8
+- 2.4.2
+
 before_install:
 - gem update bundler
+
 notifications:
   email:
     on_success: never
     on_failure:
     - andyboutte@gmail.com
+
 env:
   global:
   - secure: sez/vCAm9aUFVPe/b8qY4M1aISDBV1QVPmMqfzzMNgcAW1KmbBpUtY7u3NgR4pxYh8pmUbxynk3+JdSQ8y3O+AfTNC2VTLTOEQAOTZNm9m8aL4PlnEskc7mppLbzLj7tL79rJOiBO0GVIrx0yNdYJNk7A4PcZ7gPpDBQxOdzytcFMOpYlsIYDhuB97fCts286B6CGjisVuhtC/U3hhJxKyYdV5VjNavMpHB/5NfpjeRrbbBsFv2PQHDpzfl56dEhYyX4WE7a1CjWagwHF10XAWb+yBceVZp4V7vtElZ3CKI4p+88tffP6RkBQzdp7KYeVlxgvencbzl5wOYUoqvEQ0Xlpnl0Xu7D/0tJd54nPbm70YUhmMNx960anmKfmgQaFwgkwZVD9WnjgRZc40mUDEg2mAUh6FEEfRLUdR6+oljqSbGrxmQxd4UIlePB+nOMrCwmnVhFW1UA+eUew6sEoJtIvz+jryRerqLCNZf0qbS0yioAjxxkVoLGIxYhjNxt6VufR+TqMULL5Ee5SdHPurR48fqKlYXXMGOMT40tX6X64J4BkFb3ubqtKkPPGwaJ0xP5BWifItOaJnRNjUJ/8SSH1KhvRZCrcrPd6A/5WOyld+2nyqCAbIytbt9YkXPKG1gIhdZTPkiP5xcQQh9FfoHekSsAanKWA5cPg75nUzw=
