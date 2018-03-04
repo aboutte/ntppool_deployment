@@ -51,13 +51,13 @@ export AWS_SECRET_ACCESS_KEY="xxxxxxxx"
 git clone git@github.com:aboutte/ntppool_deployment.git
 cd ntppool_deployment
 bundle install
-
 ```
 
 ### ntppool_deploument.rb usage message
 
 ```
-$ ./ntppool_deployment.rb
+cd cloudformation
+$ bundle exec ntppool_deployment.rb
 usage: cloudformation/ntppool_deployment.rb <expand|diff|validate|create|update|cancel-update|delete|describe|describe-resource|get-template>
 ```
 
@@ -116,6 +116,7 @@ which automatically updated my .travis.yml file with the secrets.
 ## TODO: 
 
 - [x] get Travis CI hooked up
+- [ ] add cloudwatch alarms into deployment 
 - [ ] remove all the unnecessary rubocop overrides
 - [ ] find API to automate the generation of [NTP Server](https://github.com/aboutte/ntppool_deployment/blob/master/chef/cookbooks/ntppool_deployment/attributes/default.rb#L2)
 - [ ] write test to validate chef code
