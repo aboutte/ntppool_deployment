@@ -8,8 +8,8 @@ def init
   require 'resolv'
 end
 
-def acquire_eip(aws_clients)
-  aws_clients[:ec2].allocate_address(domain: 'vpc').public_ip
+def acquire_eip(ec2)
+  ec2.allocate_address(domain: 'vpc').public_ip
 end
 
 def attach_eip
@@ -22,7 +22,7 @@ def attach_eip
   when Resolv::IPv6::Regex
     abort
   else
-    puts 'Aquaring an IP'
+    puts 'Acquiring an IP'
     eip = acquire_eip(ec2)
   end
 

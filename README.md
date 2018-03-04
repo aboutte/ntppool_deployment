@@ -73,7 +73,18 @@ bundle exec cloudformation/ntppool_deployment.rb create --region us-west-2 --sta
 bundle exec cloudformation/ntppool_deployment.rb validate --region us-west-2 --stack-name ntppool-$(date '+%s') --parameters "environment=production;hostname=ntp-usw2.andyboutte.com;eip=52.37.145.131;keyName=aboutte;instanceType=t2.micro" --disable-rollback
 ```
 
-## Travis CI
+## Testing
+
+### Local
+
+The following command can be used for testing locally:
+
+```
+cd chef/cookbooks/ntppool_deployment/
+export AWS_PROFILE="p"; kitchen verify
+```
+
+### Travis CI
 
 Some of the Rake tasks require AWS credentials.  I have created a `travisci` user in my NTP AWS account and provided the following inline IAM Policy:
 
@@ -116,6 +127,8 @@ which automatically updated my .travis.yml file with the secrets.
 ## TODO: 
 
 - [x] get Travis CI hooked up
+- [ ] updated version of chefdk in kitchen and cloudformation 
+- [ ] integrate role-base
 - [ ] add cloudwatch alarms into deployment 
 - [ ] remove all the unnecessary rubocop overrides
 - [ ] find API to automate the generation of [NTP Server](https://github.com/aboutte/ntppool_deployment/blob/master/chef/cookbooks/ntppool_deployment/attributes/default.rb#L2)
