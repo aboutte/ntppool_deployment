@@ -51,13 +51,13 @@ export AWS_SECRET_ACCESS_KEY="xxxxxxxx"
 git clone git@github.com:aboutte/ntppool_deployment.git
 cd ntppool_deployment
 bundle install
-
 ```
 
 ### ntppool_deploument.rb usage message
 
 ```
-$ ./ntppool_deployment.rb
+cd cloudformation
+$ bundle exec ntppool_deployment.rb
 usage: cloudformation/ntppool_deployment.rb <expand|diff|validate|create|update|cancel-update|delete|describe|describe-resource|get-template>
 ```
 
