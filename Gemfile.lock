@@ -30,7 +30,7 @@ GEM
     powerpack (0.1.1)
     rainbow (2.2.2)
       rake
-    rake (11.1.2)
+    rake (13.0.1)
     rubocop (0.52.1)
       parallel (~> 1.10)
       parser (>= 2.4.0.2, < 3.0)
@@ -51,4 +51,4 @@ DEPENDENCIES
   rubocop (~> 0.52.1)
 
 BUNDLED WITH
-   1.15.4
+   1.17.1
