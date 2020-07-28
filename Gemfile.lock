@@ -22,7 +22,7 @@ GEM
     highline (1.7.8)
     jmespath (1.2.4)
       json_pure (>= 1.8.1)
-    json (2.1.0)
+    json (2.3.1)
     json_pure (1.8.3)
     parallel (1.12.1)
     parser (2.5.0.2)
